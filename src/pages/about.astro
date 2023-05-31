@@ -1,22 +1,56 @@
+---
+const pageTitle = "About me"
+
+const identity = {
+  firstName: "Finch",
+  country: "Canada",
+  occupation: "Software Engineer",
+  hobbies: ["photography", "skating", "basketball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs", "PHP", "Python"];
+
+const happy = true;
+const finshed = false;
+const goal = 3;
+---
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
     <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
-  <h1>About Me</h1>
+  <h1>{pageTitle}</h1>
   <h2>... and my new Astro site!</h2>
 
   <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
 
   <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+  <p>Here are a few facts about me:</p>
+<ul>
+  <li>My name is {identity.firstName}.</li>
+  <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+  <!--Assuming this checks that the hobbies has enough before executing the code, kind of like a little test-->
+  <!-- If the the first part evaluates to false then the next part wont run -->
+  {identity.hobbies.length >= 2 && 
+    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+  } 
+</ul>
+<p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>
+{happy && <p>I will am happy with what I am learning so far</p>}
+{finshed && <p>I have finshed this tutorial</p>}
+{goal === 3 ? <p>I plan to finish this in 3 days</p> : <p>I plan to finish this in {goal} days</p>}
 </body>
 	</body>
 </html>
