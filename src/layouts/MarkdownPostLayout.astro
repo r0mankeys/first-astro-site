@@ -1,0 +1,36 @@
+---
+import "../styles/global.css"
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// frontmatter is the name of the stuff in the 'blockquote'
+const { frontmatter } = Astro.props;
+
+const pageTitle = frontmatter.title;
+---
+<style>
+    .tags {
+        font-family: "Hanken Grotesk";
+        display: flex;
+        list-style-type: none;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .tags > li {
+        background-color: hsl(264, 55%, 54%);
+        padding: 0.5rem;
+        border-radius: 1rem;
+        color: white;
+    }
+
+</style>
+<BaseLayout pageTitle={frontmatter.title}>
+    <h1>{pageTitle}</h1>
+    <p>Published on: {frontmatter.pubDate.slice(0,10)}</p>
+    <p>Written by {frontmatter.author}</p>
+    <ul class="tags">
+        {frontmatter.tags.map((tag: String) => <li>{tag}</li>)}
+    </ul>
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <slot />
+</BaseLayout>

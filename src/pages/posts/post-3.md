@@ -1,11 +1,12 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "My Third Astro Blog Post"
 pubDate: 2023-05-31
 description: "My third astro blog post"
 author: r0mankeys
 image:
-url: "https://docs.astro.build/assets/full-logo-light.png"
-alt: "The full Astro logo."
+  url: "https://docs.astro.build/assets/full-logo-light.png"
+  alt: "The full Astro logo."
 tags: ["astro", "blogging", "learning in public", "broadening horizons"]
 ---
 
