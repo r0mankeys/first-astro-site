@@ -1,0 +1,17 @@
+---
+const { platform, username } = Astro.props;
+---
+<style>
+    a {
+      padding: 0.5rem 1rem;
+      color: white;
+      background-color: hsl(264, 67%, 35%);
+      text-decoration: none;
+    }
+
+    a:hover {
+        background-color: hsl(264, 67%, 55%);
+    }
+  </style>
+
+<a href={`https://www.${platform}.com/${username}`}>{platform[0].toUpperCase() + platform.slice(1)}</a>
