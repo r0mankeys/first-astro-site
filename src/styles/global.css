@@ -20,6 +20,20 @@ h1 {
   font-size: 2.5rem;
 }
 
+ul {
+  list-style-type: none;
+}
+
+ul > li > a {
+  text-decoration: none;
+  color: hsl(223, 66%, 31%);
+}
+
+ul > li > a:hover {
+  color: hsl(223, 66%, 51%);
+  text-decoration: underline;
+}
+
 /* nav styles */
 
 .hamburger {

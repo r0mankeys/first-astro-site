@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "My Third Astro Blog Post"
+title: "My Third Blog Post"
 pubDate: 2023-05-31
 description: "My third astro blog post"
 author: r0mankeys
